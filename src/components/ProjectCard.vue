@@ -10,7 +10,8 @@ export default {
 
 <template>
     <div class="card h-100">
-        <img v-if="!project.img_preview.startsWith('http')" :src="'http://localhost:8000/storage/' + project.img_preview" class="card-img-top h-100" alt="...">
+        <img v-if="!project.img_preview.startsWith('http')"
+            :src="'http://localhost:8000/storage/' + project.img_preview" class="card-img-top h-100" alt="...">
 
         <img v-else :src="project.img_preview" class="card-img-top object-fit-cover h-100" alt="...">
 
