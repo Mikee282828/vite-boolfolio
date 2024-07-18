@@ -36,7 +36,6 @@ export default {
             }
           )
       }
-
     },
     indexButton(index) {
       if (this.projects.links[index].url) {
@@ -49,7 +48,19 @@ export default {
             }
           )
       }
+    },
+    linkButton(index){
+      if (this.projects.links[index].url) {
+        axios
+          .get(this.projects.links[index].url)
+          .then(
+            result => {
+              this.projects = result.data.projects;
+            }
+          )
+      }
     }
+
   },
   mounted() {
     axios
@@ -68,9 +79,9 @@ export default {
   <div class="container">
     <nav>
       <ul class="pagination">
-        <li class="page-item" @click="prevButton()"><a class="page-link">Previous</a></li>
-        <li class="page-item" v-for="index in projects.last_page" @click="indexButton(index)"><a class="page-link" href="#">{{ index }}</a></li>
-        <li class="page-item" @click="nextButton()"><a class="page-link">Next</a></li>
+        <li class="page-item my_cursor-pointer" @click="linkButton(0)"><a class="page-link">Previous</a></li>
+        <li class="page-item my_cursor-pointer" v-for="index in projects.last_page" @click="linkButton(index)"><a class="page-link">{{ index }}</a></li>
+        <li class="page-item my_cursor-pointer" @click="linkButton(projects.last_page+1)"><a class="page-link">Next</a></li>  
       </ul>
     </nav>
 
@@ -86,5 +97,8 @@ export default {
 <style scoped>
 .my_height {
   height: 20rem;
+}
+.my_cursor-pointer{
+  cursor: pointer;
 }
 </style>
