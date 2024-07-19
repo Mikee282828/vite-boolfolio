@@ -1,23 +1,6 @@
 <script>
 import axios from 'axios';
 import ProjectCard from './components/ProjectCard.vue';
-import { createRouter, createWebHistory } from 'vue-router';
-const router = createRouter({
-  history: createWebHistory(),
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: 'AppHome'
-    },
-    {
-      path: '/about',
-      name: 'about',
-      component: 'AppAbout'
-    }
-  ]
-})
-export { router };
 export default {
   name: 'App',
   data() {
