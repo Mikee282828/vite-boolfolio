@@ -38,7 +38,7 @@ export default {
   <div class="container">
     <nav>
       <ul class="pagination">
-        <li class="page-item my_cursor-pointer" @click="urlButton(item.url)" v-for="item in projects.links"><a class="page-link">{{item.label}}</a></li>
+        <li class="page-item my_cursor-pointer" @click="urlButton(item.url)" v-for="item in projects.links"><a class="page-link" v-html="item.label"></a></li>
       </ul>
     </nav>
 
