@@ -1,15 +1,8 @@
 <script>
-import axios from 'axios';
 import ProjectCard from './components/ProjectCard.vue';
 import AppHeader from './components/AppHeader.vue';
 export default {
   name: 'App',
-  data() {
-    return {
-      projects: '',
-      baseUri: 'http://localhost:8000/api/projects'
-    }
-  },
   components: {
     ProjectCard,
     AppHeader,
@@ -23,15 +16,6 @@ export default {
       }
     }
   },
-  mounted() {
-    axios
-      .get(this.baseUri)
-      .then(
-        result => {
-          this.projects = result.data.projects;
-        }
-      )
-  }
 }
 </script>
 
@@ -57,11 +41,4 @@ export default {
 </template>
 
 <style scoped>
-.my_height {
-  height: 20rem;
-}
-
-.my_cursor-pointer {
-  cursor: pointer;
-}
 </style>
