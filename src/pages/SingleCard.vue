@@ -13,8 +13,12 @@ export default {
             .get(`${this.baseUrl}/api/projects/${this.$route.params.id}`)
             .then(
                 response => {
-                    this.projects = response.data.projects;
-                    console.log(this.projects.img_preview.startsWith('http'));
+                    if (response.data.success) {
+                        this.projects = response.data.projects;
+                    } else {
+                        this.$router.push({ name: 'not-found' })
+                    }
+
                 }
             )
     }
@@ -28,11 +32,15 @@ export default {
         <div class="row">
             <div class="col-4 my_height g-3">
                 <div class="card h-100">
-                    <img v-if="!projects.img_preview.startsWith('http')"
-                        :src="'http://localhost:8000/storage/' + projects.img_preview" class="card-img-top h-100"
-                        alt="...">
 
-                    <img v-else :src="projects.img_preview" class="card-img-top object-fit-cover h-100" alt="...">
+                    <div v-if="projects.img_preview">
+                        <img v-if="!projects.img_preview.startsWith('http')"
+                            :src="'http://localhost:8000/storage/' + projects.img_preview" class="card-img-top h-100"
+                            alt="...">
+
+                        <img v-else :src="projects.img_preview" class="card-img-top object-fit-cover h-100" alt="...">
+
+                    </div>
 
                     <div class="card-body overflow-auto">
                         <h5 class="card-title">{{ projects.title }}</h5>

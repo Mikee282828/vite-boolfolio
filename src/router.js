@@ -5,6 +5,7 @@ import AppHome from './pages/AppHome.vue';
 import AppProjects from './pages/AppProjects.vue';
 import AppContacts from './pages/AppContacts.vue';
 import SingleCard from './pages/SingleCard.vue';
+import NotFound from './pages/NotFound.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -29,6 +30,11 @@ const router = createRouter({
             name: 'single-card',
             path: '/projects/:id',
             component: SingleCard
+        },
+        {
+            name: 'not-found',
+            path: '/not-found',
+            component: NotFound
         }
     ]
 })
