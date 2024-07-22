@@ -1,5 +1,6 @@
 <script>
 import axios from 'axios';
+import { RouterLink } from 'vue-router';
 export default {
     name: 'AppProjects',
     data() {
@@ -50,10 +51,11 @@ export default {
 
                     <div class="card-body overflow-auto">
                         <h5 class="card-title">{{ project.title }}</h5>
-                        <p class="card-text">
+                        <p class="card-text overflow-hidden">
                             {{ project.description }}
                         </p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+
+                        <RouterLink class="btn btn-primary">Details</RouterLink>
                     </div>
                 </div>
             </div>
