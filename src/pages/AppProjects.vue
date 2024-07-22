@@ -55,7 +55,7 @@ export default {
                             {{ project.description }}
                         </p>
 
-                        <RouterLink class="btn btn-primary">Details</RouterLink>
+                        <RouterLink :to="{ name: 'single-card' , params: { id: project.id }}" class="btn btn-primary">Details</RouterLink>
                     </div>
                 </div>
             </div>
