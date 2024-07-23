@@ -44,14 +44,14 @@ export default {
             <div class="col-4 my_height g-3" v-for="project in projects.data">
                 <div class="card h-100">
                     <img v-if="!project.img_preview.startsWith('http')"
-                        :src="'http://localhost:8000/storage/' + project.img_preview" class="card-img-top h-100"
+                        :src="'http://localhost:8000/storage/' + project.img_preview" class="card-img-top h-25"
                         alt="...">
 
-                    <img v-else :src="project.img_preview" class="card-img-top object-fit-cover h-100" alt="...">
+                    <img v-else :src="project.img_preview" class="card-img-top object-fit-cover h-25" alt="...">
 
-                    <div class="card-body overflow-auto">
-                        <h5 class="card-title">{{ project.title }}</h5>
-                        <p class="card-text overflow-hidden">
+                    <div class="card-body overflow-hidden h-75">
+                        <h5 class="card-title h-25">{{ project.title }}</h5>
+                        <p class="card-text overflow-auto h-50">
                             {{ project.description }}
                         </p>
 

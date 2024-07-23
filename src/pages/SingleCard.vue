@@ -33,7 +33,7 @@ export default {
             <div class="col-4 my_height g-3">
                 <div class="card h-100">
 
-                    <div v-if="projects.img_preview">
+                    <div v-if="projects.img_preview" class="h-50">
                         <img v-if="!projects.img_preview.startsWith('http')"
                             :src="'http://localhost:8000/storage/' + projects.img_preview" class="card-img-top h-100"
                             alt="...">
@@ -42,9 +42,9 @@ export default {
 
                     </div>
 
-                    <div class="card-body overflow-auto">
-                        <h5 class="card-title">{{ projects.title }}</h5>
-                        <p class="card-text overflow-hidden">
+                    <div class="card-body overflow-hidden h-50">
+                        <h5 class="card-title h-25">{{ projects.title }}</h5>
+                        <p class="card-text overflow-hidden h-75">
                             {{ projects.description }}
                         </p>
                     </div>

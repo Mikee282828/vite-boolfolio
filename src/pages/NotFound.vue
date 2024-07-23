@@ -1,3 +1,15 @@
 <script></script>
-<template>Not Found 404</template>
+<template>
+    <div>
+        Not Found 404
+    </div>
+    <RouterLink
+        to="/"
+        class="btn btn-primary"
+        href="#"
+        role="button"
+        >Back to Home</Routerlink
+    >
+    
+</template>
 <style scoped></style>
